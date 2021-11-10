@@ -10,16 +10,23 @@ public class BinarySerachApp {
 	private static Scanner sc;
 	public static void main(String[] args) {
 		sc = new Scanner(System.in);
+		
 		int[] arrayToBeSearched = takeArrayInput();
-		//TODO: print the array
+		
+		//Print the array input
+		printArray(arrayToBeSearched);
+		
+		//Take the element to be searched
 		System.out.println("Enter the element to be searched");
 		int element = sc.nextInt();
+		
 		BinarySearch binarySerachRef = new BinarySearch();
 		
 		//Uncomment the below to go for iterative approach
 //		int position = binarySerachRef.binarySearch(arrayToBeSearched, element);
 		//Uncomment the below line for recurssive approach
 		int position = binarySerachRef.recurssiveBinarySearch(arrayToBeSearched,0,arrayToBeSearched.length-1, element);
+		
 		if(position >-1) {
 			System.out.println(element+" is present in the position "+(position+1));
 			
@@ -32,12 +39,23 @@ public class BinarySerachApp {
 	private static int[] takeArrayInput() {
 		System.out.println("Enter the size of the array");
 		int count = sc.nextInt();
+		
 		int[] enteredArray = new int[count];
+		
 		System.out.println("Enter "+count+" elements of the array");
+		
 		for(int i =0; i<enteredArray.length;i++) {
 			enteredArray[i] = sc.nextInt();
 		}
 		Arrays.sort(enteredArray);
 		return enteredArray;
+	}
+	
+	private static void printArray(int[] arr) {
+		System.out.println("The given array is ");
+		for(int i=0;i<arr.length;i++) {
+			System.out.print(arr[i]+" ");
+		}
+		System.out.println();
 	}
 }

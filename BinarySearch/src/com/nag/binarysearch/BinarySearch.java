@@ -3,7 +3,7 @@ package com.nag.binarysearch;
 public class BinarySearch {
 
 	/**
-	 * The array will be sorted ,will return the position of the element if found
+	 * Search will be performed on the sorted array ,it will return the position of the element if found
 	 * else -1
 	 * 
 	 * @param array
@@ -45,7 +45,7 @@ public class BinarySearch {
 				return low;
 			else
 				return -1;
-		} else {
+		} else if(low<high) {
 
 			int middle = low + (high - low) / 2;
 
@@ -58,6 +58,8 @@ public class BinarySearch {
 				return recurssiveBinarySearch(array, low, middle - 1, elementToBeSearched);
 			}
 		}
+		else
+			return -1;
 
 	}
 
