@@ -3,7 +3,7 @@ package com.nag.linearsearch;
 public class LinearSearch {
 
 	/**
-	 * It will search the given element in the list and return true if found , false otherwise.
+	 * It will search the given element in the list and return position if found , -1 otherwise.
 	 * @param elementToBeSearched
 	 * @return
 	 */
